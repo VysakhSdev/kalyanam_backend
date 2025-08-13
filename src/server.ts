@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/db";
 import packageRoutes from "./routes/packageRoute";
+import authRoutes from "./routes/authRoutes";
 
 
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
+app.use("/api/auth", authRoutes);
 app.use("/api/packages", packageRoutes);
 
 
